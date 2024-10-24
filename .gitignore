@@ -1,11 +1,11 @@
 # For client (Next.js)
-client/node_modules/
-client/.next/
-client/.env
-client/.env.local
-client/.env.development.local
-client/.env.test.local
-client/.env.production.local
+clients/node_modules/
+clients/.next/
+clients/.env
+clients/.env.local
+clients/.env.development.local
+clients/.env.test.local
+clients/.env.production.local
 
 # For server (Node.js)
 server/node_modules/
