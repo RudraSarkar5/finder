@@ -1,0 +1,28 @@
+# For client (Next.js)
+client/node_modules/
+client/.next/
+client/.env
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+# For server (Node.js)
+server/node_modules/
+server/build/
+server/dist/
+server/.env
+server/.env.local
+server/.env.development.local
+server/.env.test.local
+server/.env.production.local
+
+# Common files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode/
+.idea/
