@@ -7,7 +7,7 @@ const Home = ()=>{
                 <input className='p-2' placeholder='search post' type="text" />
                 <button className='w-fit bg-blue-500 rounded-md px-4 py-2'>search</button>
             </div>
-            <div className='bg-slate-600 h-[90%] flex flex-wrap justify-center  overflow-y-scroll  no-scrollbar  '>
+            <div className='bg-blue-600 h-[90%] flex flex-wrap justify-center  overflow-y-scroll  no-scrollbar  '>
                 <PostCard/>
                 <PostCard/>
                 <PostCard/>
@@ -17,6 +17,13 @@ const Home = ()=>{
                 <PostCard/>
                 <PostCard/>
                 <PostCard/>
+                <PostCard/>
+                <PostCard/>
+                <PostCard/>
+                <PostCard/>
+                <PostCard/>
+                <PostCard/>
+               
             </div>
         </div>
     )

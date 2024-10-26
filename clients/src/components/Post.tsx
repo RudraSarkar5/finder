@@ -1,6 +1,7 @@
 "use client"
-import Image from "next/image";
-import userPhoto from "../../public/profile.webp"
+import ProfileTittle from "@/components/ProfileTittle"
+import Comment from "@/components/Comment"
+import Button from "@/components/Button"
 import { useState } from "react";
 import 'remixicon/fonts/remixicon.css'
 
@@ -14,75 +15,52 @@ const PostCard = ()=>{
 
 
     return (
-        <div className=" relative w-[60%] h-[65%] m-2 bg-slate-900 p-2  grid grid-cols-12 mx-10 gap-2 ">
-            <div className="col-span-1 ">
-                <Image 
-                    src={userPhoto} 
-                    alt="user_photo" 
-                    width={25} // Adjust size as needed
-                    height={25} 
-                    className=" rounded-full object-cover" // Ensures it covers the container proportionally
-                />
-
+        <div className=" relative w-[60%] h-96 my-4  bg-slate-900    ">
+            <div className="h-[10%] flex justify-between ">
+                <ProfileTittle/>
+                <Button name="edit"/>
             </div>
-            <div className="col-span-11 grid grid-rows-12 ">
-                <div className=" row-span-1 ">Rudra Sarkar</div>
-                <div className="row-span-9 bg-green-600 ">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nulla quia consequuntur ex distinctio perferendis iusto atque ullam accusamus dolore corrupti adipisci laborum non sunt porro, molestias asperiores, quis eaque!</p>
-                </div>
-                <div className="row-span-2 flex justify-around items-center bg-sky-900">
-                    <button onClick={handleClick}>comment</button>
-                    <h1>save</h1>
-                </div>
+            <div className=" h-[80%] bg-green-500 overflow-y-scroll no-scrollbar ">
+                <p>Lorem ipsum dolor sit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam nesciunt illum distinctio ratione neque ipsum veritatis aliquid fugiat error hic! Quibusdam, iusto vel. Facere, magni laudantium molestiae dolor libero vel deserunt aperiam reiciendis totam distinctio eligendi quam ipsam rem ex, numquam dolorem nihil corporis ad a asperiores unde enim? Magnam quod hic distinctio temporibus cum exercitationem explicabo eligendi, quisquam repellat molestiae consequatur rem aliquam vel cumque alias ut officiis libero? Assumenda laudantium quam, placeat, unde soluta nesciunt culpa magni sint iste error aperiam nihil quidem ad, dolores cupiditate obcaecati voluptas odio quasi laboriosam. Amet eligendi consequuntur necessitatibus at nostrum nihil vel soluta culpa repellendus, incidunt reprehenderit. Corporis alias maxime ut sequi a qui, ex distinctio totam quod, enim autem, quia in. Possimus dignissimos cumque consequuntur molestias aperiam dolorem ducimus, tenetur ipsa nam. Modi odit aspernatur perferendis, saepe rem unde tenetur culpa officiis! Nisi, modi vitae quasi totam doloremque eveniet architecto soluta ullam mollitia possimus ipsam ut quaerat temporibus inventore commodi dolore, corporis quibusdam. Tempore, dolor, harum unde eaque dicta temporibus, vero illum aspernatur optio assumenda ipsa ipsum! Illo quibusdam odit dicta labore velit optio placeat repellendus fuga officiis omnis incidunt beatae doloribus dolorum itaque, maiores consequuntur vitae a! Reiciendis voluptatem a natus sint culpa facere nam dolorem, ea vitae incidunt voluptatum quisquam, accusamus doloremque et! Odio, cum dignissimos adipisci blanditiis similique veniam eligendi, maiores reprehenderit distinctio consequuntur, deleniti vel itaque eaque. Iure tenetur ea amet qui? Suscipit, nihil mollitia molestias cumque sed, odio iure excepturi officiis amet, similique natus. Maxime quibusdam sit qui officia dolorem corrupti temporibus id ipsum voluptatem! Necessitatibus quas ad, obcaecati nemo sit, dolor sint commodi laboriosam hic enim saepe molestias culpa nihil in atque adipisci, similique cum? Praesentium recusandae aspernatur impedit fuga voluptatibus nobis, accusantium quia, error obcaecati quod nesciunt. Voluptatem aperiam ea fugit assumenda magni? amet consectetur adipisicing elit. Dignissimos soluta quae architecto id assumenda illum nulla exercitationem temporibus qui, at quam sapiente harum repellat praesentium nesciunt laboriosam deserunt laudantium dolor delectus? Ducimus aspernatur natus veniam architecto! Cum, recusandae, quod voluptatum eligendi animi nostrum quas reprehenderit ipsa at voluptate ullam ab.</p>
+               
             </div>
-            <div className={`absolute w-full h-full bg-red-500 grid grid-rows-12 py-2 px-3  ${!commentVisible&&"hidden"} `}>
-                <div className="row-span-2 bg-blue-500 grid grid-cols-12 items-center  justify-between">
-                    <div className="col-span-10 flex justify-between bg-green-500">
-                        <input type="text" className="w-[70%] p-2 " placeholder="write comment..."  />
+            <div className="h-[10%] bg-pink-500 flex justify-around">
+                    <Button onClick={handleClick} name="comments"/>
+                    <Button name="save"/>
+            </div>
+            <div className={` w-full h-full absolute top-0 left-0   bg-red-500   ${!commentVisible&&"hidden"} `}>
+                <div className="h-[20%] w-full  bg-violet-500 flex  items-center  justify-between">
+                    <div className="w-[80%] flex justify-between bg-green-500">
+                        <input type="text" className="w-[80%] p-2 " placeholder="write comment..."  />
                         <button className="px-2 py-1 bg-blue-500 rounded-lg">add</button>
                     </div>
-                    <div className="col-span-2 bg-pink-500 flex justify-end ">
+                    <div className="w-[20%]  bg-pink-500 flex justify-end ">
                         <i onClick={handleClick} className="ri-arrow-go-back-line "></i>
                     </div>
                     
                 </div>
-                <div className="row-span-10 bg-green-500 overflow-y-scroll no-scrollbar ">
+                <div className="h-[80%]  bg-green-500 overflow-y-scroll no-scrollbar ">
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
                     <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
+                        <Comment/>
                     </div>
-                    <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
-                    </div>
-                    <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
-                    </div>
-                    <div >
-                        <h1>rudra sarkar</h1>
-                        <p className="ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae!</p>
-                    </div>
+                    
+                   
+                  
                     
                 </div>
             </div>
