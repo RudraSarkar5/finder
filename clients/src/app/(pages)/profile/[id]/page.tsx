@@ -1,5 +1,5 @@
 "use client"
-import PostCard from "@/components/Post"
+import PostCard from "@/components/PostCard"
 import Button from "@/components/Button"
 import Image from "next/image";
 
